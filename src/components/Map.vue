@@ -26,6 +26,7 @@
       accessToken="pk.eyJ1IjoibG9nYW53IiwiYSI6IlQzWHJqc3cifQ.KY3j-syHXeYmI69JmLqGqQ"
       :mapStyle="'mapbox://styles/loganw/ckcoy9qw60og41hnx4mr9wn8c/draft'"
       @click="togglehover"
+      v-if="!staticImage"
     >
       <MglVectorLayer
         :source="{
@@ -71,6 +72,7 @@
         }"
       />
     </MglMap>
+    <img v-else :src="staticImage" />
 
     <div
       v-if="!hideLegend"
@@ -132,6 +134,7 @@ import { MglMap, MglVectorLayer } from "vue-mapbox";
 import * as d3 from "d3";
 import { variables, interactiveVariables } from "../constants/ranges";
 import bigLoans from "../assets/loan-zips.json";
+import download from "downloadjs";
 
 export default {
   name: "Map",
@@ -148,6 +151,8 @@ export default {
     legendStyle: String,
     hideLegend: Boolean,
     interactive: Boolean,
+    staticImage: String,
+    enableScreenshots: Boolean,
   },
   data() {
     return {
@@ -171,7 +176,26 @@ export default {
     numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
-    togglehover() {
+    togglehover({ map }) {
+      function takeScreenshot(map) {
+        return new Promise(function(resolve) {
+          map.once("render", function() {
+            resolve(map.getCanvas().toDataURL("image/jpeg", 0.9));
+          });
+          /* trigger render */
+          map._render();
+        });
+      }
+
+      if (!this.interactive && this.enableScreenshots) {
+        console.log("trying to trigger screenshot", map);
+
+        /* example */
+        takeScreenshot(map).then(function(data) {
+          download(data, Date.now() + ".jpg", "image/png");
+        });
+      }
+
       this.hovering = !this.hovering;
     },
     mousemove(e) {
@@ -300,7 +324,7 @@ export default {
   position: relative;
   margin-bottom: $grid;
   height: calc(#{$grid} * 36);
-  pointer-events: none;
+  // pointer-events: none;
 
   &.interactive {
     pointer-events: all;

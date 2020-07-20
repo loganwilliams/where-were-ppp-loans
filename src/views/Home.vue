@@ -40,6 +40,7 @@
       :zoom="9"
       variable="pct_with_loan"
       title="Percent of restaurants with PPP loan*"
+      staticImage="1.jpg"
     />
     <div class="w4 caption">
       *All loans are tallied by ZIP codes, and divided by the number of
@@ -136,6 +137,7 @@
         :bbox="[-118.744354, 33.684354, -118.02475, 34.197037]"
         :center="[-118.294, 33.98]"
         :zoom="9"
+        staticImage="2.jpg"
       />
     </div>
 
@@ -148,6 +150,7 @@
         :zoom="9"
         title="Percent Black and Hispanic"
         legendStyle="below"
+        staticImage="3.jpg"
       />
 
       <Map
@@ -158,6 +161,7 @@
         :zoom="9"
         title="Median income"
         legendStyle="below"
+        staticImage="4.jpg"
       />
     </div>
 
@@ -173,6 +177,7 @@
       :zoom="8.5"
       title="Percent of restaurants with PPP loan"
       variable="pct_with_loan"
+      staticImage="5.jpg"
     />
 
     <div class="w3 l1 p">
@@ -194,6 +199,7 @@
           title="Percent of restaurants with PPP loan"
           variable="pct_with_loan"
           :hideLegend="true"
+          staticImage="6.jpg"
         />
         <div class="caption">
           <strong>East Palo Alto.</strong> Above, percent of restaurants with
@@ -209,6 +215,7 @@
           title="Percent Black and Hispanic"
           variable="black_and_hispanic"
           legendStyle="below"
+          staticImage="7.jpg"
         />
       </div>
       <div class="w2">
@@ -219,6 +226,7 @@
           title="Percent of restaurants with PPP loan"
           variable="pct_with_loan"
           :hideLegend="true"
+          staticImage="8.jpg"
         />
         <div class="caption">
           <strong>East Oakland.</strong> Above, percent of restaurants with PPP
@@ -234,6 +242,7 @@
           title="Percent Black and Hispanic"
           variable="black_and_hispanic"
           legendStyle="below"
+          staticImage="9.jpg"
         />
       </div>
     </div>
@@ -321,6 +330,7 @@
         title="Percent of restaurants with PPP loan"
         variable="pct_with_loan"
         legendStyle="right"
+        staticImage="10.jpg"
       />
     </div>
 
@@ -332,6 +342,7 @@
         title="% Black and Hispanic"
         variable="black_and_hispanic"
         legendStyle="right"
+        staticImage="11.jpg"
       />
     </div>
 
@@ -349,6 +360,7 @@
         title="Percent of restaurants with PPP loan"
         variable="loan_per_company"
         legendStyle="right"
+        staticImage="12.jpg"
       />
     </div>
     <div class="w4">
@@ -359,6 +371,7 @@
         title="% Black and Hispanic"
         variable="black_and_hispanic"
         legendStyle="right"
+        staticImage="13.jpg"
       />
     </div>
 
