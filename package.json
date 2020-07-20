@@ -9,7 +9,15 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "d3": "^5.16.0",
+    "mapbox": "^1.0.0-beta10",
+    "mapbox-gl": "^1.11.1",
+    "plumber": "^0.4.8",
+    "plumber-sass": "^0.7.7",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
     "vue": "^2.6.11",
+    "vue-mapbox": "^0.4.1",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
