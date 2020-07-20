@@ -34,7 +34,7 @@
       for yourself.
     </div>
     <Map
-      classString="w4"
+      classString="w4 h3"
       :bbox="[-118.744354, 33.684354, -118.02475, 34.197037]"
       :center="[-118.21, 33.98]"
       :zoom="9"
@@ -131,7 +131,7 @@
 
     <div class="share">
       <Map
-        classString="w3"
+        classString="w3 h3"
         variable="loan_per_company"
         title="PPP loan per restaurant"
         :bbox="[-118.744354, 33.684354, -118.02475, 34.197037]"
@@ -172,7 +172,7 @@
     </div>
 
     <Map
-      classString="w4"
+      classString="w4 h3"
       :center="[-122.1, 37.65]"
       :zoom="8.5"
       title="Percent of restaurants with PPP loan"
@@ -393,7 +393,7 @@
     </div>
 
     <Map
-      classString="w4 h3 below"
+      classString="w4 h3 below interactive"
       variable="pct_with_loan"
       :interactive="true"
       legendStyle="below"

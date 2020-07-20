@@ -85,9 +85,8 @@ body {
 }
 
 .h3 {
-  height: calc(
-    #{$grid} * #{$block-width} * 3 + #{$grid} * #{$gutter-width} * 2
-  ) !important;
+  // this isn't really h3
+  height: calc(#{$grid} * 36) !important;
 }
 
 .h4 {
@@ -227,23 +226,29 @@ img {
 
 @media (max-width: 928px) {
   .w1,
-  .w2,
-  .w2p,
   .w3,
   .w4,
+  .w4p,
+  .w3p,
+  .w2p,
+  .w1p,
   .l1,
   .l2,
   .l3,
+  .h2,
+  .h3,
+  .h4,
   .float {
     margin-left: 0px !important;
-    width: 100% !important;
+    max-width: 100% !important;
     position: relative !important;
     left: 0px !important;
     top: 0px !important;
+    height: auto !important;
   }
 
   img {
-    width: calc(100vw - 2 * #{$gutter-width} * #{$grid});
+    max-width: calc(100vw - 2 * #{$gutter-width} * #{$grid});
   }
 
   #app {
@@ -252,6 +257,11 @@ img {
 
   .share {
     flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .below {
+    margin-bottom: 0px !important;
   }
 }
 

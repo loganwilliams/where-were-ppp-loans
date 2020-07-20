@@ -314,6 +314,12 @@ export default {
   //   pointer-events: none;
   // }
 }
+
+.interactive .map-test {
+  @media (max-width: 928px) {
+    height: calc(#{$grid} * 36) !important;
+  }
+}
 </style>
 
 <style lang="scss" scoped>
@@ -323,7 +329,6 @@ export default {
 .container {
   position: relative;
   margin-bottom: $grid;
-  height: calc(#{$grid} * 36);
   // pointer-events: none;
 
   &.interactive {
@@ -403,7 +408,7 @@ export default {
 }
 
 .container.h3 .legend.below {
-  top: calc(1 * (#{$gutter-width} * 2 + #{$block-width} * 3) * #{$grid});
+  top: calc(1 * (#{$gutter-width} * 0 + #{$block-width} * 3) * #{$grid});
 }
 
 .ell {
@@ -417,6 +422,18 @@ export default {
   bottom: $grid;
   left: $grid;
   z-index: 10000;
+
+  @media (max-width: 928px) {
+    position: relative;
+
+    .row {
+      flex-wrap: wrap;
+
+      .button {
+        margin-bottom: $grid;
+      }
+    }
+  }
 
   .row {
     display: flex;
