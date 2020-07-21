@@ -32,6 +32,7 @@ html {
 
 body {
   background-color: transparent;
+  // font baseline grid debugger
   // background-image: linear-gradient(
   //     0deg,
   //     rgba(0, 0, 0, 0.3) 0%,
@@ -252,6 +253,7 @@ img {
 
 @media (max-width: 928px) {
   .w1,
+  .w2,
   .w3,
   .w4,
   .w4p,

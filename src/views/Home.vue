@@ -8,8 +8,8 @@
       forgivable (that is, “free money”) under a number of circumstances. I
       mapped this data to the ZIP Code level in California, and was struck by
       how starkly patterns of urban equity were revealed. To better compare
-      disparate neighborhoods, I limited the loans I looked at to those for
-      restaurants*, some of the most common and universal businesses.
+      disparate neighborhoods, I limited my analysis to those for restaurants*,
+      some of the most common and universal businesses.
       <div class="float right d3 caption">
         *&lt; 500 employees
       </div>
@@ -61,7 +61,7 @@
       carry emotional resonance. Let's take a closer look at two ZIP Codes in
       LA.
 
-      <div class="float">
+      <div class="float caption w2">
         * ZIP Codes aren’t designed for geospatial analysis — in fact, they’re
         not even shapes, just lists of addresses! Because the shapes are
         arbitrary and ornate, they are vulnerable to the “Modified Area Unit
@@ -317,10 +317,10 @@
 
     <div class="w3 l0 p">
       Individually, each of these variables explain about 12%* of the variation
-      in local PPP loan access rates. Together, they explain 16%. I examined a
-      handful of other socioeconomic variables that might be assumed to be
-      related: Black, white, and Asian population breakdowns, age, and
-      population density. However, the only other variable that held up in a
+      in local PPP loan access rates. Together, they explain 16%. When weighted
+      by population, 19%. I examined a handful of other socioeconomic variables
+      that might be related: Black, white, and Asian population breakdowns, age,
+      and population density. However, the only other variable that held up in a
       linear multivariate regression was the total population of the ZCTA. This
       effect is much smaller than the effect of median income or percent
       Hispanic.

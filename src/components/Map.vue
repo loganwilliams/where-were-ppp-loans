@@ -472,7 +472,7 @@ export default {
 
   .title {
     margin-right: $grid;
-    font-weight: medium;
+    font-weight: 600;
   }
 }
 
