@@ -166,6 +166,32 @@ body {
   );
 }
 
+.float.right {
+  font-family: jaf-lapture-caption, sans-serif;
+  position: absolute;
+  width: calc(#{$grid} * #{$block-width} * 1 + #{$grid} * #{$gutter-width} * 0);
+  top: calc(#{$grid} * #{$gutter-width} * 3);
+  right: calc(
+    -1 * #{$grid} * #{$block-width} * 1 - #{$grid} * #{$gutter-width} * 1
+  );
+}
+
+.float.d0 {
+  top: 12px;
+}
+
+.float.d3 {
+  top: calc(#{$grid} * #{$gutter-width} * 2.5);
+}
+
+.float.d4 {
+  top: calc(#{$grid} * #{$gutter-width} * 3.5);
+}
+
+.float.d6 {
+  top: calc(#{$grid} * #{$gutter-width} * 5.5);
+}
+
 .share {
   display: flex;
   justify-content: space-between;

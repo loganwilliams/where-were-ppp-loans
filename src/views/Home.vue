@@ -1,7 +1,7 @@
 <template>
   <div class="story">
     <Title text="Where were paychecks protected?" />
-    <div class="w3 l1 p">
+    <div class="w3 l0 p">
       Recently the Small Business Administration released a very interesting
       dataset of of loans issued under the 2020 Paycheck Protection Plan, after
       a number of FOIA requests. These loans, issued to small* businesses are
@@ -10,13 +10,14 @@
       how starkly patterns of urban equity were revealed. To better compare
       disparate neighborhoods, I limited the loans I looked at to those for
       restaurants*, some of the most common and universal businesses.
-      <div class="float left caption">
-        *&lt; 500 employees<br /><br /><br /><br /><br /><br />*NAICS codes
-        722511 and 722513<br /><br /><br /><br /><br /><br />
+      <div class="float right d3 caption">
+        *&lt; 500 employees
       </div>
+
+      <div class="float right d6 caption">*NAICS codes 722511 and 722513</div>
     </div>
 
-    <div class="w4 l0 p">
+    <div class="w3 l1 p">
       Overwhelmingly, restaurants in wealthy and white neighborhoods had
       disproportionate access to capital through the program, and some ZIP codes
       received 20-50x more aid than similar places just miles away. This isn’t
@@ -27,7 +28,7 @@
       them.
     </div>
 
-    <div class="w4 l0 p">
+    <div class="w3 l1 p">
       Below, I show some of what I noticed in the data, starting with Los
       Angeles. You can also
       <a href="#interactive">jump straight to an interactive map</a> to explore
@@ -56,8 +57,9 @@
       Clear patterns of regional inequity are visible in the map of Los Angeles,
       most notably between South LA and the Hollywood Hills. These ZIP Code
       tabulation areas (ZCTAs) defined by the census may not be great for
-      statistical analysis*, but at least they carry emotional resonance. Let's
-      take a closer look at the two neighborhoods outlined on the map.
+      statistical analysis*, but at least these numeric neighborhood identifiers
+      carry emotional resonance. Let's take a closer look at two ZIP Codes in
+      LA.
 
       <div class="float">
         * ZIP Codes aren’t designed for geospatial analysis — in fact, they’re
@@ -114,7 +116,7 @@
       <strong>90255</strong> is 97% Hispanic.
     </div>
 
-    <div class="w3 p l1">
+    <div class="w3 p l0">
       A related statistic I derived from the PPP dataset is the total amount
       loaned in a ZIP code divided by each restaurant in that ZIP code. This
       average amount loaned per restaurant breaks down along roughly the same
@@ -123,9 +125,13 @@
       ownership, as discussed below, but regardless, accurately shows how new
       money has flowed to certain neighborhoods more than others.
 
-      <div class="float left caption">
-        *that is, the highest sextile has a greater relative amount of the total
-        loan value, then of the total number of loans
+      <div class="float right caption d4">
+        *that is, the highest sextile contains more extreme values than it does
+        when looking at % with loan. This can also be seen in histograms, where
+        % with loan is ~gaussian distributed but the loan per restaurant has a
+        much longer tail.
+
+        <img src="../assets/hist.png" />
       </div>
     </div>
 
@@ -168,7 +174,8 @@
     <div class="w4 p">
       The correlation with low-income neighborhoods, and Black and Hispanic
       majority neighborhoods, is noticeable and widespread, though not
-      universal.
+      universal. In the San Francisco Bay Area, the pattern is slightly harder
+      to percieve.
     </div>
 
     <Map
@@ -215,7 +222,7 @@
           title="Percent Black and Hispanic"
           variable="black_and_hispanic"
           legendStyle="below"
-          staticImage="7.jpg"
+          staticImage="8.jpg"
         />
       </div>
       <div class="w2">
@@ -226,14 +233,14 @@
           title="Percent of restaurants with PPP loan"
           variable="pct_with_loan"
           :hideLegend="true"
-          staticImage="8.jpg"
+          staticImage="7.jpg"
         />
         <div class="caption">
           <strong>East Oakland.</strong> Above, percent of restaurants with PPP
           loans. Below, percent of population that is Black or Hispanic. This
           majority Black and hispanic area has low access to PPP resources. Some
           wealthy areas with many restaurants, like the Piedmont Avenue district
-          in North Oakland, have a surprisingly low number of PPP loans.
+          in North Oakland, also have a surprisingly low number of PPP loans.
         </div>
         <Map
           classString="w2 h2 below"
@@ -249,18 +256,18 @@
 
     <div class="w3 l1 p">
       Some of the reason for this divide becomes clearer when looking at the
-      individual loans and restaurnts in detail — franchises. For example, one
-      company in the wealthy Bay Area suburb of Livermore, QUICKSERVE
-      ENTERPRISES INC, recieved a loan for between $5 and 10 million. According
-      to their website, QUICKSERVE ENTERPRISES INC "owns and operates fast food
-      restaurants," including several Burger King restaurants in the
-      less-wealthy Central Valley. While those Burger King establishments count
-      as restaurants in the ZIP code where they are located, all of the PPP loan
-      money is being counted in Livermore, where their parent corporation is
-      located. However, I believe it is defensible and even desireable to
-      represent the data this way. With their $5-10 million loan, QUICKSERVE
-      ENTERPRISES INC aims to retain 22 employees — likely to be corporate
-      employees at the Livermore office.
+      individual loans and restaurnts in detail — chain restaurants and
+      franchises. For example, one company in the wealthy Bay Area suburb of
+      Livermore, QUICKSERVE ENTERPRISES INC, recieved a loan for between $5 and
+      10 million. According to their website, QUICKSERVE ENTERPRISES INC "owns
+      and operates fast food restaurants," including several Burger King
+      restaurants in the less-wealthy Central Valley. While those Burger King
+      establishments count as restaurants in the ZIP code where they are
+      located, all of the PPP loan money is being counted in Livermore, where
+      their parent corporation is located. However, I believe it is defensible
+      and even desireable to represent the data this way. With their $5-10
+      million loan, QUICKSERVE ENTERPRISES INC aims to retain 22 employees —
+      likely to be corporate employees at the Livermore office.
     </div>
     <div class="w3 l1 p">
       The prevalence of franchised restaurants in low-income areas is part of
@@ -269,7 +276,7 @@
       existing inequity can to some extent be measured. These businesses abound
       in the upper-end of the PPP loan dataset: other corporations to recieve
       the maximum possible loan were Great American Chicken Corp. (KFC) and
-      Soutern Caliornia Pizza, a private equity-owned Pizza Hut franchisee. In
+      Southern Caliornia Pizza, a private equity-owned Pizza Hut franchisee. In
       the
       <a href="#interactive">interactive map</a> below, you can see the names of
       these large loan recipients.
@@ -280,8 +287,10 @@
     <div class="w3 l1 p">
       Two broad trends stand out in the map exploration: a correlation with
       income, and a correlation with the percent of the population that is
-      non-white, particularly Hispanic. I looked at the correlation of PPP
-      outcomes with these factors and found a definite correlation.
+      non-white, particularly Hispanic. I performed some multivariate
+      regressions on this dataset, and found that despite the noise and other
+      complexities of the data, these two variables alone had a measurable
+      impact.
     </div>
     <div class="share">
       <div class="w2">
@@ -306,7 +315,7 @@
       </div>
     </div>
 
-    <div class="w3 l1 p">
+    <div class="w3 l0 p">
       Individually, each of these variables explain about 12%* of the variation
       in local PPP loan access rates. Together, they explain 16%. I examined a
       handful of other socioeconomic variables that might be assumed to be
@@ -316,7 +325,7 @@
       effect is much smaller than the effect of median income or percent
       Hispanic.
 
-      <div class="caption float left">
+      <div class="caption float right d0">
         *this is the same as the r<sup>2</sup>
       </div>
     </div>
@@ -377,8 +386,8 @@
 
     <div class="w3 p">
       San Diego however shows many of the same patterns observed in the San
-      Francisco and Los Angeles metro areas. Notice that the pattern becomes
-      less clear in the rural areas on the east side of the map. Low population
+      Francisco and Los Angeles metro areas. Notice that the trend becomes less
+      clear in the rural areas on the east side of the map. Low population
       density (and a correspondingly low number of restaurants) adds noise to
       the data.
     </div>
@@ -386,10 +395,10 @@
     <Title text="Explore the data" id="interactive" />
 
     <div class="w3 p l1">
-      In this interactive map, you can further explore the data. Choose from
-      variables to map with the selection bar at the bottom. Hover or click on a
-      ZIP Code area to see statistics for that location below the map next to
-      the legend. You can also find a list of large loan recipients here.
+      In this interactive map, you can further explore the data by mapping a
+      number of neighborhood variables. Hover or click on a ZIP Code area to see
+      statistics for that location below the map next to the legend, as well as
+      a list of large loan recipients in that ZIP Code.
     </div>
 
     <Map
